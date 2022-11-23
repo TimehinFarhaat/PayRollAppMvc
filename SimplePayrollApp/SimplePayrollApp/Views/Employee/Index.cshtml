@@ -1,0 +1,78 @@
+﻿@model IEnumerable<SimplePayrollApp.Dto.EmployeesDto>
+@{
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+@{
+    int i = 0;
+}
+    <h2>Employee Pay Roll List</h2>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                   Id
+                </th>
+                <th>
+                     FirstName
+                </th>
+                <th>
+                    LastName
+                </th>
+                <th>
+                   Salary
+                </th>
+                  <th>
+                   Pension
+                </th>
+                  <th>
+                   TaxableIncome
+                </th>
+                <th>
+                   YearlyTax
+                </th>
+                 <th>
+                   MonthlyTax
+                </th>
+            
+
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var f in Model)
+            {
+                <tr>
+                    <td>
+                       @i+=1
+                </td>
+                <td>
+                    @f.FirstName
+                </td>
+                <td>
+                    @f.LastName
+                </td>
+                <td>
+                       @f.Salary
+                </td>
+                
+                <td>
+                    @f.Pension
+                </td>
+                 <td>
+                    @f.TaxableIncome
+                </td>
+                 <td>
+                    @f.YearlyTax
+                </td>
+                  <td>
+                    @f.MonthlyTax
+                </td>
+                
+            </tr>
+            }
+        </tbody>
+
+    </table>
+    
